@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <title>Computer Graphics: Starter Project</title>
+</head>
+
+<body>
+  <header class="clearfix">
+    <h1>Example</h1>
+    <p>
+      <span id="std_name"></span><br>
+      CS4280 - Fall 2022
+    </p>
+  </header>
+
+  <main>
+    <article>
+
+      <!--Week 1-->
+      <!-- # Examples: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes -->
+      <svg width="500" height="600" style="background: rgb(232, 207, 207)" fill="transparent">
+        <g transform="rotate(-270  100, 100)">
+          <circle cx="150" cy="125" r="100" stroke="black" fill="transparent" >
+            <animate
+                    attributeName="r",
+                    from="20",
+                    to="100",
+                    begin="0s",
+                    dur="2s",
+                    repeatCount="5"
+            />
+          </circle>
+          <rect x="10" y="10" width="30" height="30" stroke="green" fill="green" >
+            <animate
+                    attributeName="width",
+                    from="10",
+                    to="100",
+                    begin="0s",
+                    dur="5s",
+                    repeatCount="5"
+            />
+
+            <animateTransform
+                    attributeName="transform",
+                    begin="0s",
+                    dur="5s",
+                    type="rotate",
+                    from="0 150 125"
+                    to="360 150 125"
+                    repeatCount="5"
+            />
+
+<!--            <animateTransform-->
+<!--                    attributeName="transform",-->
+<!--                    begin="0s",-->
+<!--                    dur="5s",-->
+<!--                    type="skewX",-->
+<!--                    from="0"-->
+<!--                    to="30"-->
+<!--                    repeatCount="5"-->
+<!--            />-->
+          </rect>
+        </g>
+
+
+        <ellipse cx="250" cy="450" rx="200" ry="100" stroke="green" fill="transparent" />
+        <line x1="0" y1="0" x2="500" y2="600" stroke="blue" />
+
+        <!-- Doc: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d-->
+        <path d="M100,200 L200,400 v-50 h30 Z" stroke="red" fill="transparent" stroke-width=3 transform="translate(100, 100) rotate(-20, 150, 125) scale(0.5)"/>
+
+        <!-- Quadratic curve-->
+        <circle cx="150" cy="200" r="3" fill="blue" />
+        <path d="M100,400 Q 150,200 400, 400" stroke="red" fill="transparent" stroke-width=3 />
+
+        <!-- Cubic curve-->
+        <circle cx="150" cy="350" r="3" fill="green" />
+        <circle cx="400" cy="550" r="3" fill="green" />
+        <path d="M100,400 C 150,350 400,550 450,450" stroke="green" fill="transparent" stroke-width=3 />
+
+        <circle cx="0" cy="0" r="20" fill="transparent" stroke="purple">
+          <animateMotion
+                  path="M100,400 C 150,350 400,550 450,450"
+                  begin="0s",
+                  dur="4s",
+                  repeatCount="indefinite"
+
+          />
+        </circle>
+      </svg>
+<!--&lt;!&ndash;      Original&ndash;&gt;-->
+<!--      <canvas id="webgl-scene">-->
+<!--        Your browser does not support HTML5.-->
+<!--      </canvas>-->
+
+    </article>
+    <aside>
+      <ul>
+        <li><a href="week01.html">Week 01</a></li>
+        <li><a href="week02.html">Week 02</a></li>
+        <li><a href="week03.html">Week 03</a></li>
+        <li><a href="week04.html">Week 04</a></li>
+        <li><a href="week05.html">Week 05</a></li>
+        <li><a href="week06.html">Week 06</a></li>
+        <li><a href="activity5_sol.html">Activity 05 sol</a></li>
+        <li><a href="week09.html">Week 09</a></li>
+<!--        <li><a href="week08.html">Week 08</a></li>-->
+<!--        <li><a href="week09.html">Week 09</a></li>-->
+        <li><a href="week10.html">Week 10</a></li>
+        <li><a href="week11.html">Week 11</a></li>
+        <li><a href="week11b.html">Week 11b</a></li>
+        <li><a href="week12.html">Week 12</a></li>
+        <li><a href="week12b.html">Week 12b</a></li>
+        <li><a href="week13.html">Week 13</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Powered by&nbsp;&nbsp;</span>
+    <img src="images/webgl.png" alt="WEBGL logo" height="20">
+  </footer>
+
+  <script src="javascripts/main.js"></script>
+</body>
+ 
+</html>

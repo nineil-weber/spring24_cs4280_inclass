@@ -5,6 +5,7 @@ dist/*
 !dist/models
 /tmp
 /out-tsc
+bkp/
 
 # dependencies
 /node_modules

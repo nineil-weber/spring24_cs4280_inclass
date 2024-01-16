@@ -28,6 +28,7 @@ let fn = 'John';
 let ln = 'Doe';
 
 let name = `My name is ${fn} ${ln}.`
+console.log(name)
 
 
 // Arrays
@@ -181,116 +182,116 @@ console.log(output_2)
 //      return d[1]
 //    }) // add text
 
-// // // Section: D3_2
-// console.log("----- D3_2 -----")
-// import * as d3 from "d3";
-//
-// let svg1 = d3.select('main')
-//     .append('svg')
-//     .attr('width',500)
-//     .attr('height', 600)
-//     .style('background', '#eee')
-//     .style("fill", "transparent")
-//     .attr("fill", 'white');
-//
-// svg1.append("circle")
-//     .style("fill", "black")
-//     .attr("cx", 50)
-//     .attr("cy", 75)
-//     .attr("r", 5);
-//
-// let obj_circle = svg1.append("circle")
-//     .style("stroke", "black")
-//     .style("fill", "transparent")
-//     .attr("cx", 50)
-//     .attr("cy", 75)
-//     .attr("r", 100);
-//
-// // svg - animate
-// function animate_circle()
-// {
-//     // https://www.guidodiepen.nl/2018/07/wrapping-my-head-around-d3-rotation-transitions/
-//     obj_circle
-//         .transition()
-//         .duration(2000)
-//         .attr('r', 25)
-//         .transition()
-//         .duration(2000)
-//         .attr('r', 100)
-//         .on("end", animate_circle);
-// }
-// animate_circle()
-//
-// let obj_rect = svg1.append("rect")
-//     .attr("x",10)
-//     .attr("y",10)
-//     .attr("width", 30)
-//     .attr("height", 30)
-//     .attr("stroke", 'green')
-//     .attr("fill", 'green');
-//
-//
-// // svg - animate Transform
-// var interpol_rotate = d3.interpolateString( "rotate(0,50,75)", "rotate(90,50,75)" )
-// function animate_rect()
-// {
-//     obj_rect
-//         .transition()
-//         .attr('transform', 'translate(50, 50)')
-//         .duration(1000)
-//         .transition()
-//         .attrTween('transform' , function(d,i,a){ return interpol_rotate } )
-//         .duration(2000);
-// }
-// animate_rect()
-//
-// var svg2 = d3.select('main')
-//     .append('svg')
-//     .attr('width', 500)
-//     .attr('height', 500)
-//     .attr('background', '#a9a9a9') // change background color
-//
-// svg2.append("circle")
-//     .style("stroke", "blue")
-//     .style("stroke-width", 3)
-//     .style("fill-opacity", 0.5)
-//     .attr("r", 100)
-//     .attr("cx", 150)
-//     .attr("cy", 275);
-//
-// svg2.append("rect")
-//     .attr("x",200)
-//     .attr("y",300)
-//     .attr("width", 130)
-//     .attr("height", 150)
-//     .style("fill", 'blue')
-//     .style("stroke", 'white')
-//     .style("stroke-width", 5)
-//     .style("stroke-dasharray", [15, 5]);
-//
-// svg2.transition().attr('transform', 'rotate(90)').delay(1000).duration(1000).style("background-color", "gray");
-//
-// svg1.append('ellipse')
-//     .attr('cx', 250)
-//     .attr('cy', 450)
-//     .attr('rx', 200)
-//     .attr('ry', 100)
-//     .style('fill', 'none')
-//     .style('stroke', 'green')
-//
-// svg1.append('line')
-//     .attr('x1', 0)
-//     .attr('y1', 0)
-//     .attr('x2', 500)
-//     .attr('y2', 600)
-//     .style('stroke', 'maroon');
-//
-// svg1.append("path")
-//     .style("stroke", "red")
-//     .style('fill', 'none')
-//     .style('stroke-width', 3)
-//     .attr("d", "M100,200 L200,400 L100,400 v-50 h30 Z")
-//
+// // Section: D3_2
+console.log("----- D3_2 -----")
+import * as d3 from "d3";
+
+let svg1 = d3.select('main')
+    .append('svg')
+    .attr('width',500)
+    .attr('height', 600)
+    .style('background', '#eee')
+    .style("fill", "transparent")
+    .attr("fill", 'white');
+
+svg1.append("circle")
+    .style("fill", "black")
+    .attr("cx", 50)
+    .attr("cy", 75)
+    .attr("r", 5);
+
+let obj_circle = svg1.append("circle")
+    .style("stroke", "black")
+    .style("fill", "transparent")
+    .attr("cx", 50)
+    .attr("cy", 75)
+    .attr("r", 100);
+
+// svg - animate
+function animate_circle()
+{
+    // https://www.guidodiepen.nl/2018/07/wrapping-my-head-around-d3-rotation-transitions/
+    obj_circle
+        .transition()
+        .duration(2000)
+        .attr('r', 25)
+        .transition()
+        .duration(2000)
+        .attr('r', 100)
+        .on("end", animate_circle);
+}
+animate_circle()
+
+let obj_rect = svg1.append("rect")
+    .attr("x",10)
+    .attr("y",10)
+    .attr("width", 30)
+    .attr("height", 30)
+    .attr("stroke", 'green')
+    .attr("fill", 'green');
+
+
+// svg - animate Transform
+var interpol_rotate = d3.interpolateString( "rotate(0,50,75)", "rotate(90,50,75)" )
+function animate_rect()
+{
+    obj_rect
+        // .transition()
+        // .attr('transform', 'translate(50, 50)')
+        // .duration(1000)
+        .transition()
+        .attrTween('transform' , function(d,i,a){ return interpol_rotate } )
+        .duration(2000)
+}
+animate_rect()
+
+var svg2 = d3.select('main')
+    .append('svg')
+    .attr('width', 500)
+    .attr('height', 500)
+    .attr('background', '#a9a9a9') // change background color
+
+svg2.append("circle")
+    .style("stroke", "blue")
+    .style("stroke-width", 3)
+    .style("fill-opacity", 0.5)
+    .attr("r", 100)
+    .attr("cx", 150)
+    .attr("cy", 275);
+
+svg2.append("rect")
+    .attr("x",200)
+    .attr("y",300)
+    .attr("width", 130)
+    .attr("height", 150)
+    .style("fill", 'blue')
+    .style("stroke", 'white')
+    .style("stroke-width", 5)
+    .style("stroke-dasharray", [15, 5]);
+
+svg2.transition().attr('transform', 'rotate(90)').delay(1000).duration(1000).style("background-color", "gray");
+
+svg1.append('ellipse')
+    .attr('cx', 250)
+    .attr('cy', 450)
+    .attr('rx', 200)
+    .attr('ry', 100)
+    .style('fill', 'none')
+    .style('stroke', 'green')
+
+svg1.append('line')
+    .attr('x1', 0)
+    .attr('y1', 0)
+    .attr('x2', 500)
+    .attr('y2', 600)
+    .style('stroke', 'maroon');
+
+svg1.append("path")
+    .style("stroke", "red")
+    .style('fill', 'none')
+    .style('stroke-width', 3)
+    .attr("d", "M100,200 L200,400 L100,400 v-50 h30 Z")
+
 // // Quadratic curve
 // svg1.append('circle')
 //     .attr('cx', 150) // 150 | 150

@@ -16,7 +16,7 @@ module.exports = {
     // week05: './src/javascripts/week05.js',
     // week04: './src/javascripts/week04.js',
     // week03: './src/javascripts/week03.js',
-    // week02: './src/javascripts/week02.js',
+    week02: './src/javascripts/week02.js',
     week01: './src/javascripts/week01.js'
   },
   mode: 'development',

@@ -135,54 +135,9 @@ console.log(output)
 let output_2 = gm(3, 9)
 console.log(output_2)
 
-// // Section: D3_1 - optional
-// console.log("----- D3_1 -----")
-// import * as d3 from "d3";
-// let da = [
-//   [18, 'One'],
-//   [19, 'Two'],
-//   [16, 'Three'],
-//   [14, 'Four'],
-//   [17, 'Five'],
-//   [19, 'Six'],
-// ]
-//
-// d3.select('main')
-//   .append('svg')
-//   .attr('width',500)
-//   .attr('height', 600)
-//   .style('background', '#eee') // change background color
-//
-// //Draw rectangles
-// d3.select('svg').selectAll('rect')
-//    .data(da)
-//    .enter()
-//    .append('rect') // draw rectangle
-//    .attr('x', 0) // x coordinates
-//    .attr('y', function(d, i){
-//      return i * 30
-//    }) // y coordinates
-//    .attr('height', 15)
-//    .attr('width', (d)=>{
-//      return d[0] * 3
-//    })
-//
-// // Add Text
-//  d3.select('svg').selectAll('text')
-//    .data(da)
-//    .enter()
-//    .append('text')
-//    .attr('x', function(d){
-//      return d[0] * 3 + 10
-//    }) // x coordinates
-//    .attr('y', function(d, i){
-//      return i * 30 + 16
-//    }) // y coordinates
-//    .text(function(d){
-//      return d[1]
-//    }) // add text
 
-// // Section: D3_2
+
+// // Section: D3_1
 console.log("----- D3_2 -----")
 import * as d3 from "d3";
 
@@ -292,37 +247,37 @@ svg1.append("path")
     .style('stroke-width', 3)
     .attr("d", "M100,200 L200,400 L100,400 v-50 h30 Z")
 
-// // Quadratic curve
-// svg1.append('circle')
-//     .attr('cx', 150) // 150 | 150
-//     .attr('cy', 300) // 500 | 300
-//     .attr('r', 3)
-//     .style('fill', 'blue');
-//
-// svg1.append("path")
-//     .style("stroke", "blue")
-//     .style('fill', 'none')
-//     .style('stroke-width', 3)
-//     .attr("d", "M100,400 Q150,300 400,400") // 500 --> 300
-//
-// // Cubic curve
-// svg1.append('circle')
-//     .attr('cx', 150) // 150 | 150
-//     .attr('cy', 350) // 550 | 350
-//     .attr('r', 3)
-//     .style('fill', 'green');
-//
-// svg1.append('circle')
-//     .attr('cx', 400)
-//     .attr('cy', 550)
-//     .attr('r', 3)
-//     .style('fill', 'green');
-//
-// // https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
-// svg1.append("path")
-//     .style("stroke", "green")
-//     .style('fill', 'none')
-//     .style('stroke-width', 3)
-//     .attr("d", "M100,400 C150,350 400,550 450, 450") // C150,550 --> C150,350
-//
-// // Animations link: https://www.guidodiepen.nl/2018/07/wrapping-my-head-around-d3-rotation-transitions/
+// Quadratic curve
+svg1.append('circle')
+    .attr('cx', 150) // 150 | 300
+    .attr('cy', 300) // 500 | 300
+    .attr('r', 3)
+    .style('fill', 'blue');
+
+svg1.append("path")
+    .style("stroke", "blue")
+    .style('fill', 'none')
+    .style('stroke-width', 3)
+    .attr("d", "M100,400 Q150,300 400,400") // 500 --> 300
+
+// Cubic curve
+svg1.append('circle')
+    .attr('cx', 150) // 150 | 150
+    .attr('cy', 100) // 550 | 350
+    .attr('r', 3)
+    .style('fill', 'green');
+
+svg1.append('circle')
+    .attr('cx', 400)
+    .attr('cy', 550)
+    .attr('r', 3)
+    .style('fill', 'green');
+
+// https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+svg1.append("path")
+    .style("stroke", "green")
+    .style('fill', 'none')
+    .style('stroke-width', 3)
+    .attr("d", "M100,400 C150,100 400,550 450, 450") // C150,550 --> C150,350
+
+// Animations link: https://www.guidodiepen.nl/2018/07/wrapping-my-head-around-d3-rotation-transitions/

@@ -24,9 +24,9 @@ import { WebGLHelper } from './webgl_helper'
 
 // displayPoint(vs_script, fs_script)
 // displayPointAtClick(vs_script, fs_script) //Display point at click
-// displayPrimitivesAtClick(vs_script, fs_script) // Draw Triangles with clicks
-
 // displayTriangle(vs_script, fs_script)
+
+// displayPrimitivesAtClick(vs_script, fs_script) // Draw Triangles with clicks
 displayColoredTriangles(vs_color_script, fs_color_script)
 
 // Functions
@@ -59,7 +59,7 @@ export function displayPoint(vs_script, fs_script) {
 
     // Sending coordinates to GPU
     let coords = gl.getAttribLocation(program, "coordinates")
-    gl.vertexAttrib3f(coords, .8, .8, .0)
+    gl.vertexAttrib3f(coords, -.8, -.8, .0)
 
     // Clear the canvas
     gl.clearColor(1.0, 1.0, 1.0, 1.0) // white color
@@ -165,8 +165,8 @@ export function displayPrimitivesAtClick(vs_script, fs_script){
         vertices.push(0.0)
 
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW)
-        gl.drawArrays(gl.POINTS, 0, vertices.length / 3)
-        // gl.drawArrays(gl.TRIANGLES, 0, vertices.length / 3)
+        // gl.drawArrays(gl.POINTS, 0, vertices.length / 3)
+        gl.drawArrays(gl.TRIANGLES, 0, vertices.length / 3)
     }
 
     WebGLHelper.clear(gl, [1.0, 1.0, 1.0, 1.0])
@@ -235,6 +235,7 @@ export function displayColoredTriangles(vs_script, fs_script){
     },{
         name: 'color',
         size: 3,
+        // data: [1,0,0, 1,0,0, 1,0,0]
         data: [1,0,0, 0,1,0, 0,0,1]
     }])
 

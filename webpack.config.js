@@ -12,7 +12,7 @@ module.exports = {
     // week10: './src/javascripts/week10.js',
     // week09: './src/javascripts/week09.js',
     // activity5_sol: './src/javascripts/activity5_sol.js',
-    // week06: './src/javascripts/week06.js',
+    week06: './src/javascripts/week06.js',
     week05: './src/javascripts/week05.js',
     week04: './src/javascripts/week04.js',
     week03: './src/javascripts/week03.js',

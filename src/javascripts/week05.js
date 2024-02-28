@@ -46,30 +46,30 @@ export function vector_matrix_operations()
     console.log( 'rot_matrix_x' )
     console.log( rot_matrix_x.transpose() )
 
-    // // Matrix Operations
-    // let matrix_A = new THREE.Matrix4();
-    // matrix_A.set(1, 2, -3, 5,
-    //     0, 4, 1, 3,
-    //     2, 0, 0, -1,
-    //     4, -2, -1, 0
-    // );
-    //
-    // let matrix_B = new THREE.Matrix4();
-    // matrix_B.set(1, 2, -1, 0,
-    //     0, 5, 3, 0,
-    //     -2, 1, 1, 4,
-    //     0, 6, -4, -3  );
-    //
-    // // Matrix Operations
-    // let mul_matrix = new THREE.Matrix4().multiplyMatrices(matrix_A, matrix_B);
-    //
-    // //Report
-    // console.log('matrix_A')
-    // console.log( matrix_A.transpose() )
-    // console.log('matrix_B')
-    // console.log( matrix_B.transpose() )
-    // console.log('mul_matrix')
-    // console.log( mul_matrix.transpose() )
+    // Matrix Operations
+    let matrix_A = new THREE.Matrix4();
+    matrix_A.set(1, 2, -3, 5,
+        0, 4, 1, 3,
+        2, 0, 0, -1,
+        4, -2, -1, 0
+    );
+
+    let matrix_B = new THREE.Matrix4();
+    matrix_B.set(1, 2, -1, 0,
+        0, 5, 3, 0,
+        -2, 1, 1, 4,
+        0, 6, -4, -3  );
+
+    // Matrix Operations
+    let mul_matrix = new THREE.Matrix4().multiplyMatrices(matrix_A, matrix_B);
+
+    //Report
+    console.log('matrix_A')
+    console.log( matrix_A.transpose() )
+    console.log('matrix_B')
+    console.log( matrix_B.transpose() )
+    console.log('mul_matrix')
+    console.log( mul_matrix.transpose() )
 
 }
 
@@ -220,8 +220,8 @@ export function displayCube(){
 }
 
 // Main
-vector_matrix_operations()
-// displayCube()
+// vector_matrix_operations()
+displayCube()
 
 // // [Matlab Code] Transformations - Exercise 1
 // tm = [1 0 0 -20; 0 1 0 -30; 0 0 1 30; 0 0 0 1]

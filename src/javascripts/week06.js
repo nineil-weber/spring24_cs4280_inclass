@@ -61,7 +61,7 @@ export function displayMesh(){
     aux_matrix[3][2]=new point_3d(0.75*h,0.5*h,0*h);
     aux_matrix[3][3]=new point_3d(0.75*h,0.75*h,0*h);
 
-    let mesh_instance = new Mesh(aux_matrix)
+    let mesh_instance = new Mesh( )
     mesh_instance.plot(0.2)
     // mesh_instance.print()
 

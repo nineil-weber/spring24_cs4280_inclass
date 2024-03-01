@@ -545,8 +545,8 @@ export function displaySphere() {
 // displayMultipleCubes()
 // displayCubeOperations()
 
-// displaySphere()
-displayMesh()
+displaySphere()
+// displayMesh()
 
 // Notes
 // * WebGL coordinates: https://www.tutorialspoint.com/webgl/webgl_basics.htm

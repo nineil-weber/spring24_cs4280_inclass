@@ -80,8 +80,8 @@ export function displayMeshes()
     // Adding the mesh
     let geometry = new THREE.Geometry()
 
-    // loadMeshGeometry(geometry, data256, 256, 256) // Honolulu mountain
-    loadMeshGeometry(geometry, sombrero(64, 64), 64, 64, .1) // Sombrero function
+    loadMeshGeometry(geometry, data256, 256, 256) // Honolulu mountain
+    // loadMeshGeometry(geometry, sombrero(64, 64), 64, 64, .1) // Sombrero function
 
     geometry.computeFaceNormals()
     let material = new THREE.MeshNormalMaterial()
@@ -279,7 +279,6 @@ export function displayLightedScene()
     f.add(controls, 'intensity').min(0).max(10).onChange(animate)
 
     f.open()
-
 }
 
 // Textures
@@ -398,26 +397,25 @@ export function displayTexturedScene(){
     cube.material.bumpScale = .6 // Step 3
     cube.material.normalMap = textures['crate_normal'] // Step 4
 
-    // cube = new THREE.Mesh(geometry)
-    // cube.materialParams = {}
-    // cube.position.set(200, 50, 100)
-    // cube.name = 'somePattern'
-    // scene.add(cube)
-    // cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
-    // cube.material.map = textures[cube.name]
-    //
-    //
-    // // Adding the floor
-    // geometry = new THREE.PlaneGeometry(500, 300)
-    // let plane = new THREE.Mesh(geometry)
-    // plane.materialParams = { side: THREE.DoubleSide }
-    // plane.rotateX(Math.PI / 2)
-    // plane.name = 'floor'
-    // scene.add(plane)
-    // plane.material = new THREE.MeshStandardMaterial(plane.materialParams)
-    // plane.material.map = textures[plane.name]
-    //
-    //
+    cube = new THREE.Mesh(geometry)
+    cube.materialParams = {}
+    cube.position.set(200, 50, 100)
+    cube.name = 'somePattern'
+    scene.add(cube)
+    cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
+    cube.material.map = textures[cube.name]
+
+    // Adding the floor
+    geometry = new THREE.PlaneGeometry(500, 300)
+    let plane = new THREE.Mesh(geometry)
+    plane.materialParams = { side: THREE.DoubleSide }
+    plane.rotateX(Math.PI / 2)
+    plane.name = 'floor'
+    scene.add(plane)
+    plane.material = new THREE.MeshStandardMaterial(plane.materialParams)
+    plane.material.map = textures[plane.name]
+
+
     // Adding a wall
     geometry = new THREE.BoxGeometry(500, 100, 5)
     let wall = new THREE.Mesh(geometry)
@@ -427,16 +425,16 @@ export function displayTexturedScene(){
     scene.add(wall)
     wall.material = new THREE.MeshStandardMaterial(wall.materialParams)
     wall.material.map = textures[wall.name]
-    //
-    // //Adding google earth
-    // geometry = new THREE.SphereGeometry(50, 40, 40)
-    // let sphere = new THREE.Mesh(geometry)
-    // sphere.materialParams = {}
-    // sphere.name = 'earth'
-    // sphere.position.set(200, 50, -50)
-    // scene.add(sphere)
-    // sphere.material = new THREE.MeshStandardMaterial(sphere.materialParams)
-    // sphere.material.map = textures[sphere.name]
+
+    //Adding google earth
+    geometry = new THREE.SphereGeometry(50, 40, 40)
+    let sphere = new THREE.Mesh(geometry)
+    sphere.materialParams = {}
+    sphere.name = 'earth'
+    sphere.position.set(200, 50, -50)
+    scene.add(sphere)
+    sphere.material = new THREE.MeshStandardMaterial(sphere.materialParams)
+    sphere.material.map = textures[sphere.name]
 
     // Adding light sources
     let ambientLight = new THREE.AmbientLight(0x333333) // black
@@ -460,9 +458,9 @@ export function displayTexturedScene(){
 
 // Main
 // [Meshes and Lighting]
-displayMeshes() // Meshes
+// displayMeshes() // Meshes
 // displayLightedScene() // Lightning
 
 // [Textures]
 // displayCity()
-// displayTexturedScene()
+displayTexturedScene()

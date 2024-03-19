@@ -125,7 +125,7 @@ export function displayLightedScene()
     let canvas = document.querySelector('#webgl-scene')
     let scene = new THREE.Scene()
     let renderer = new THREE.WebGLRenderer({canvas})
-    let camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientWidth, .1, 1000)
+    let camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, .1, 1000)
 
     renderer.setSize(canvas.clientWidth, canvas.clientHeight)
     renderer.setClearColor(0xEEEEEE)
@@ -459,8 +459,8 @@ export function displayTexturedScene(){
 // Main
 // [Meshes and Lighting]
 // displayMeshes() // Meshes
-// displayLightedScene() // Lightning
+displayLightedScene() // Lightning
 
 // [Textures]
 // displayCity()
-displayTexturedScene()
+// displayTexturedScene()

@@ -80,8 +80,8 @@ export function displayMeshes()
     // Adding the mesh
     let geometry = new THREE.Geometry()
 
-    loadMeshGeometry(geometry, data256, 256, 256) // Honolulu mountain
-    // loadMeshGeometry(geometry, sombrero(64, 64), 64, 64, .1) // Sombrero function
+    // loadMeshGeometry(geometry, data256, 256, 256) // Honolulu mountain
+    loadMeshGeometry(geometry, sombrero(64, 64), 64, 64, .1) // Sombrero function
 
     geometry.computeFaceNormals()
     let material = new THREE.MeshNormalMaterial()

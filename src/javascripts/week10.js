@@ -458,8 +458,8 @@ export function displayTexturedScene(){
 
 // Main
 // [Meshes and Lighting]
-// displayMeshes() // Meshes
-displayLightedScene() // Lightning
+displayMeshes() // Meshes
+// displayLightedScene() // Lightning
 
 // [Textures]
 // displayCity()

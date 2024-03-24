@@ -413,9 +413,9 @@ export function displayTexturedScene(){
 
 // Main
 // [Hierarchical]
-// displaySolar()
+displaySolar()
 
 // [Additional Examples]
 // displayCubes() // Create material with shaders
 // displayCity() // Adding interactive keys
-displayTexturedScene() // Water texture to Grass
+// displayTexturedScene() // Water texture to Grass

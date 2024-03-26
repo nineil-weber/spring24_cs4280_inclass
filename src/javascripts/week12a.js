@@ -245,7 +245,7 @@ export function displayTexturedScene(){
         rayCaster.setFromCamera(pointerAt, camera)
         let intersects = rayCaster.intersectObjects([wall, plane, crate, cube, sphere])
         for(let intersect of intersects){
-            // console.log( intersect.object.name )
+            console.log( intersect.object.name )
 
             // // change color
             // let obj = intersect.object
@@ -294,9 +294,17 @@ export function display_scene_path() {
     console.log('curves[0]: ' + path.curves[0])
     console.log('curves[0][0]: ' + path.curves[0][0])
     let points = path.curves.reduce((p, d) => [...p, ...d.getPoints(40)], [])
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+    console.log('path.curves: ')
+    console.log( path.curves )
+
+    console.log('points')
+    console.log( points )
     // https://www.w3schools.com/jsref/jsref_reduce.asp
     // https://thecodebarbarian.com/javascript-reduce-in-5-examples.html
 
+    // 3D path
     scene.add(new THREE.Line(
         new THREE.BufferGeometry().setFromPoints(points),
         new THREE.LineBasicMaterial({color: 0xFFFF00})
@@ -325,7 +333,8 @@ export function display_scene_path() {
         // cube.quaternion.setFromAxisAngle( axis, angle )
 
         renderer.render(scene, camera)
-        fraction += 0.001
+        fraction += 0.001 // controls the speed
+        // fraction += 0.01
         if (fraction > 1)
             fraction = 0
 
@@ -336,9 +345,24 @@ export function display_scene_path() {
     animate()
 }
 
+export function reduce_example()
+{
+    const array1 = [1, 2, 3, 4];
+
+    // 0 + 1 + 2 + 3 + 4
+    const initialValue = 0;
+    const sumWithInitial = array1.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue,
+    );
+
+    console.log(sumWithInitial);
+}
+
 //Main
-displayTexturedScene() // Adding clicks on objects
-// display_scene_path() // Move object around a path
+// displayTexturedScene() // Adding clicks on objects
+display_scene_path() // Move object around a path
+// reduce_example()
 
 // [Extra] Additional Examples
 // displayOcean() // Ocean animation

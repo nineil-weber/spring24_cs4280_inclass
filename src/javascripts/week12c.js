@@ -53,8 +53,10 @@ export function displayWork(){
         return false;
     }
 
-    function checkCollision(r = 0.5, x, y) // x and y denote cube centroids array
+    function checkCollision(r = 0.5, x, y)
     {
+        // x and y denote cube centroids array
+        // Verify collisions between cubes
         let flag = false;
         for (var i = 0;i <x.length;i++)
         {
@@ -70,6 +72,7 @@ export function displayWork(){
 
 
     function generateRandomIntegerInRange(min, max) {
+        // Generate random number between min and max
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -96,7 +99,7 @@ export function displayWork(){
         cnt+=1;
         if(cnt % 200 ==0 || q_ast.isEmpty <1)
         {
-            let  ast = generateRandomIntegerInRange(1, 5); // max, 5 asteroids per row
+            let  ast = generateRandomIntegerInRange(1, 4); // max, 4 asteroids per row
             let x = []
             let y_i = []
 
@@ -114,13 +117,14 @@ export function displayWork(){
 
             }while( checkCollision(box_size, x, y_i) ); //verifying collisions between asteroids
 
+            // Drawing asteroids as cubes
             for (var i = 0;i <ast;i++)
             {
                 //creating boxes
                 let geometry = new THREE.BoxGeometry(box_size, box_size, box_size)
                 let cube = new THREE.Mesh( geometry );
                 cube.materialParams = {}
-                cube.position.set(x[i], y_i[i], 0)
+                cube.position.set(x[i], y_i[i], 0) // z coordinate by default is 0
                 scene.add(cube)
 
                 cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
@@ -133,7 +137,7 @@ export function displayWork(){
         let y = [] // its size is the number of cubes
         for (var i = 0; i <sz; i++)
         {
-            q_ast[i].position.y -= 0.01 // Update cube position
+            q_ast[i].position.y -= 0.01 // Update cube position, as time updates
             y[i] = q_ast[i].position.y //  get y position of all asteroids
         }
 
@@ -190,6 +194,8 @@ export function displayWork(){
                 for (var j = 0;j <box_obj.length;j++)
                 {
                     let box=box_obj[j]
+
+                    // Need to consider min/max coordinates with movement of charizard object
                     if(intersectsBoxes(boundingBox, box.min.x+object.position.x ,box.min.y + object.position.y ,box.min.z ,box.max.x + object.position.x  ,box.max.y + object.position.y  ,box.max.z  ))
                     {
                         alert('GAME OVER')

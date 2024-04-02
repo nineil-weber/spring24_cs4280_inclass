@@ -342,7 +342,7 @@ export function displayTexturedScene(){
             renderer.render(scene, camera)
         }),
         sinusoidal: sinusoidal(256, 256),
-        checkerboard: checkerboard(512, 512),
+        checkerboard: checkerboard(512),
         somePattern: somePattern(128, 128),
         water1: texLoader.load('./images/water_normal_1.jpg', function(){
             renderer.render(scene, camera)

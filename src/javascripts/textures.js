@@ -31,23 +31,23 @@ export function sinusoidal(size) // https://es.wikipedia.org/wiki/Sinusoide
   return new THREE.DataTexture(texels, size, size, THREE.RGBAFormat)
 }
 
-export function checkerboard(width, height, R_DIVS=8, C_DIVS=8){
-  let texels = new Uint8Array(4 * width * height)
-  let dx = width / R_DIVS, dy = height / C_DIVS
-  for(let i = 0; i < width; i++){
+export function checkerboard(size, N_DIVS=8){
+  let texels = new Uint8Array(4 * size * size)
+  let dx = size / N_DIVS, dy = size / N_DIVS
+  for(let i = 0; i < size; i++){
     let cx = Math.floor(i / dx)
-    for(let j = 0; j < height; j++){
+    for(let j = 0; j < size; j++){
       let cy = Math.floor(j / dy)
       // let c = (cx % 2 == cy % 2) ? 255 : 0 // ??
       // let c = (cx % 2) ? 255 : 0 // ??
-      let c = (cy % 2) ? 255 : 0 // Vertical lines
-      // let c = (cx % 2 !== cy % 2) ? 255 : 0 // checkerboard
-      texels[4 * i * width + 4 * j] = c;
-      texels[4 * i * width + 4 * j + 1] = c;
-      texels[4 * i * height + 4 * j + 2] = c;
-      texels[4 * i * height + 4 * j + 3] = c;
+      // let c = (cy % 2) ? 255 : 0 // Vertical lines
+      let c = (cx % 2 !== cy % 2) ? 255 : 0 // checkerboard
+      texels[4 * i * size + 4 * j] = c;
+      texels[4 * i * size + 4 * j + 1] = c;
+      texels[4 * i * size + 4 * j + 2] = c;
+      texels[4 * i * size + 4 * j + 3] = c;
     }
   }
 
-  return new THREE.DataTexture(texels, width, height, THREE.RGBAFormat)
+  return new THREE.DataTexture(texels, size, size, THREE.RGBAFormat)
 }

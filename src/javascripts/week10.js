@@ -375,7 +375,8 @@ export function displayTexturedScene(){
             renderer.render(scene, camera)
         }),
         sinusoidal: sinusoidal(256, 256),
-        checkerboard: checkerboard(512, 512),
+        // checkerboard: checkerboard(512),
+        checkerboard: checkerboard(2, 2),
         somePattern: somePattern(128, 128)
     }
 

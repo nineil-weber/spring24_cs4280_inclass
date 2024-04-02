@@ -5,6 +5,7 @@ import { sinusoidal, checkerboard, somePattern} from './textures'
 import { MTLLoader, OBJLoader} from 'three-obj-mtl-loader'
 import { Water } from 'three/examples/jsm/objects/Water2'
 import { TextureLoader } from 'three'
+// import math from "dat.gui/src/dat/color/math";
 
 export function displayCubes(){
     // In WEBGL 1
@@ -167,6 +168,56 @@ export function displaySolar(){
     }
 
     animate()
+}
+
+export function compute_ex17(){
+    let canvas = document.querySelector('#webgl-scene')
+    let scene = new THREE.Scene()
+    let renderer = new THREE.WebGLRenderer({canvas})
+    let camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientWidth, .1, 1000)
+
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight)
+    renderer.setClearColor(0x000000)
+
+    // ** key code - start -**
+    let cylinder = new THREE.Mesh(new THREE.CylinderGeometry(30, 30, 50, 30), new THREE.MeshStandardMaterial())
+
+    let long_arm = new THREE.Mesh(new THREE.BoxGeometry(10, 50, 10), new THREE.MeshStandardMaterial())
+    long_arm.position.set(10, 50, 0)
+
+    let short_arm = new THREE.Mesh(new THREE.BoxGeometry(40, 10, 10), new THREE.MeshStandardMaterial())
+    short_arm.position.set(25, 20, 0)
+
+    // hierarchical model
+    long_arm.add(short_arm)
+    long_arm.rotateZ(-(Math.PI / 6.0)) // Same form as example
+    long_arm.rotateX(-(Math.PI / 6.0)) // animation part
+    cylinder.add(long_arm)
+    cylinder.rotateY(-(Math.PI / 2.0)) // animation part
+    scene.add(cylinder)
+
+    // ** key code - end -**
+
+    // Extra
+    let ambientLight = new THREE.AmbientLight(0x333333)
+    let directionalLight = new THREE.DirectionalLight(0x777777)
+    let pointLight = new THREE.PointLight(0x999999)
+    pointLight.position.set(0, 300, 0)
+
+    scene.add(ambientLight)
+    scene.add(directionalLight)
+    scene.add(pointLight)
+
+    let cameraControls = new OrbitControls(camera, renderer.domElement)
+    cameraControls.addEventListener("change", function(){
+        renderer.render(scene, camera)
+    })
+
+    camera.position.set(-200, 400, -200)
+
+    camera.lookAt(scene.position)
+    renderer.render(scene, camera)
+    cameraControls.update()
 }
 
 export function displayCity(){
@@ -413,7 +464,8 @@ export function displayTexturedScene(){
 
 // Main
 // [Hierarchical]
-displaySolar()
+// displaySolar()
+compute_ex17()
 
 // [Additional Examples]
 // displayCubes() // Create material with shaders

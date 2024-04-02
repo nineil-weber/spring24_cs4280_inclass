@@ -38,8 +38,10 @@ export function checkerboard(width, height, R_DIVS=8, C_DIVS=8){
     let cx = Math.floor(i / dx)
     for(let j = 0; j < height; j++){
       let cy = Math.floor(j / dy)
-      // let c = (cx % 2 !== cy % 2) ? 187 : 90
-      let c = (cx % 2 !== cy % 2) ? 255 : 0
+      // let c = (cx % 2 == cy % 2) ? 255 : 0 // ??
+      // let c = (cx % 2) ? 255 : 0 // ??
+      let c = (cy % 2) ? 255 : 0 // Vertical lines
+      // let c = (cx % 2 !== cy % 2) ? 255 : 0 // checkerboard
       texels[4 * i * width + 4 * j] = c;
       texels[4 * i * width + 4 * j + 1] = c;
       texels[4 * i * height + 4 * j + 2] = c;

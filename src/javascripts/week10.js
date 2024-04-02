@@ -400,7 +400,7 @@ export function displayTexturedScene(){
     cube = new THREE.Mesh(geometry)
     cube.materialParams = {}
     cube.position.set(200, 50, 100)
-    cube.name = 'somePattern'
+    cube.name = 'checkerboard'
     scene.add(cube)
     cube.material = new THREE.MeshStandardMaterial(cube.materialParams)
     cube.material.map = textures[cube.name]
@@ -458,9 +458,9 @@ export function displayTexturedScene(){
 
 // Main
 // [Meshes and Lighting]
-displayMeshes() // Meshes
+// displayMeshes() // Meshes
 // displayLightedScene() // Lightning
 
 // [Textures]
 // displayCity()
-// displayTexturedScene()
+displayTexturedScene()
